@@ -10,7 +10,6 @@ namespace Drevo
     {
         static void Main(string[] args)
         {
-
             var bt = new btree();
             bt.Insert(8);
 
