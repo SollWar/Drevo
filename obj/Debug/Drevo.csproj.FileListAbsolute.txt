@@ -1,0 +1,6 @@
+C:\Users\Sollw\source\repos\Drevo\bin\Debug\Drevo.exe.config
+C:\Users\Sollw\source\repos\Drevo\bin\Debug\Drevo.exe
+C:\Users\Sollw\source\repos\Drevo\bin\Debug\Drevo.pdb
+C:\Users\Sollw\source\repos\Drevo\obj\Debug\Drevo.csprojAssemblyReference.cache
+C:\Users\Sollw\source\repos\Drevo\obj\Debug\Drevo.exe
+C:\Users\Sollw\source\repos\Drevo\obj\Debug\Drevo.pdb
