@@ -76,25 +76,30 @@ namespace Drevo
                         tt.Append(string.Concat(Enumerable.Repeat(' ', ml - lst[i][j].ToString().Length)).ToCharArray());
                     }
                 }
-                Console.WriteLine(tt.ToString());
             }
 
+            int h = 0;
+            int w = 0;
             foreach (var i in temp)
             {
+                h++;
+                w = 0;
                 foreach (var j in i)
                 {
+                    w++;
                     if (j >= 0)
                         Console.Write(j + " ");
                     else
-                        Console.Write("  ");
+                        Console.Write(" ");
                 }
                 Console.Write("\n");
             }
+            Console.WriteLine(h);
+            Console.WriteLine(w);
         }
 
         public void print1(Node n, int step, List<List<int>> lst)
         {
-
             if (n.right != null)
                 print1(n.right, step + 1, lst);
 
@@ -103,7 +108,7 @@ namespace Drevo
             lst.Last().Add(n.val);
             lst.Add(new List<int>());
 
-            if (n.right != null)
+            if (n.left != null)
                 print1(n.left, step + 1, lst);
         }
 
