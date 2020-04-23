@@ -44,15 +44,17 @@ namespace Drevo
 
             var bt = new btree();
 
-            bt.Insert(9);
-            bt.Insert(12);
+            bt.Insert(10);
             bt.Insert(13);
-            bt.Insert(11);
-            bt.Insert(5);
-            bt.Insert(6);
-            bt.Insert(3);
+            bt.Insert(8);
+            bt.Insert(9);
+            bt.Insert(7);
 
-            Console.WriteLine(bt.Contains(3));
+            Console.WriteLine("Contains(9) " + bt.Contains(9));
+            Console.WriteLine("Max " + bt.Max());
+            Console.WriteLine("Min " + bt.Min());
+            Console.WriteLine("Size " + bt.Size());
+            Console.WriteLine();
 
             bt.Print1();
             Console.ReadKey();

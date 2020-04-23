@@ -78,15 +78,10 @@ namespace Drevo
                 }
             }
 
-            int h = 0;
-            int w = 0;
             foreach (var i in temp)
             {
-                h++;
-                w = 0;
                 foreach (var j in i)
                 {
-                    w++;
                     if (j >= 0)
                         Console.Write(j + " ");
                     else
@@ -94,18 +89,11 @@ namespace Drevo
                 }
                 Console.Write("\n");
             }
-            Console.WriteLine(h);
-            Console.WriteLine(w);
         }
 
         public bool Contains(int x)
         {
-            bool result = false;
-            if (root.val == x)
-                result = true;
-            else
-                result = contains(x, root);
-            return result;
+            return contains(x, root);
         }
 
         private bool contains(int x, Node n)
@@ -121,6 +109,54 @@ namespace Drevo
                 if (n.left != null)
                     result = contains(x, n.left);
             return result;
+        }
+
+        public int Max()
+        {
+            return max(root.val, root);
+        }
+
+        private int max(int x, Node n)
+        {
+            int m = x;
+            if (n.right != null)
+                if (n.right.val > m)
+                    m = max(n.right.val, n.right);
+            return m;
+        }
+
+        public int Min()
+        {
+            return min(root.val, root);
+        }
+
+        private int min(int x, Node n)
+        {
+            int m = x;
+            if (n.left != null)
+                if (n.left.val < m)
+                    m = min(n.left.val, n.left);
+            return m;
+        }
+
+        public int Size()
+        {
+            int h = size(0,root);
+            return h;
+        }
+
+        private int size(int x, Node n)
+        {
+            x++;
+            if (n.right != null)
+            {
+                x = size(x, n.right);
+            }
+            if (n.left != null)
+            {
+                x = size(x, n.left);
+            }
+            return x;
         }
 
         private void print1(Node n, int step, List<List<int>> lst)
