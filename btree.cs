@@ -98,7 +98,32 @@ namespace Drevo
             Console.WriteLine(w);
         }
 
-        public void print1(Node n, int step, List<List<int>> lst)
+        public bool Contains(int x)
+        {
+            bool result = false;
+            if (root.val == x)
+                result = true;
+            else
+                result = contains(x, root);
+            return result;
+        }
+
+        private bool contains(int x, Node n)
+        {
+            bool result = false;
+
+            if (x == n.val)
+                result = true;
+            if (x > n.val)
+                if (n.right != null)
+                    result = contains(x, n.right);
+            if (x < n.val)
+                if (n.left != null)
+                    result = contains(x, n.left);
+            return result;
+        }
+
+        private void print1(Node n, int step, List<List<int>> lst)
         {
             if (n.right != null)
                 print1(n.right, step + 1, lst);
